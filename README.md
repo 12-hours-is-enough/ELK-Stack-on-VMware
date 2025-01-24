@@ -1,12 +1,33 @@
 # ELK-Stack-on-VMware
 
-## 개발환경
+<br><br>
+
+## 📑 목차 
+1. [🖥️ 개발 환경](#%EF%B8%8F-개발-환경)
+2. [🏗️ 아키텍쳐](#%EF%B8%8F-아키텍쳐)
+3. [🌐 환경 구성](#-환경-구성)
+4. [🔄 회고](#-회고)
+
+<br><br>
+
+## 🖥️ 개발 환경 
 > 운영체제 : Ubuntu:24.04.4<br>
 > ELK-Stack : 7.17.27<br>
 > JDK : 17.0.13<br>
 > SSH Connection Tool : mobaxterm
 
-## 아키텍쳐
+<br><br>
+
+## 🏗️ 아키텍쳐
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/4b249dd4-21f7-42dd-9d6d-b286efe3a12e" width="700">
+</div>
+
+<br><br>
+
+## 🌐 환경 구성
+
+<br>
 
 ## 기존 설치된 Elasticsearch, Kibana, Logstash 삭제
 ```
@@ -19,6 +40,7 @@ $ sudo apt purge logstash -y
 $ sudo apt autoremove
 $ sudo rm -rf /etc/elasticsearch /var/lib/elasticsearch /etc/logstash /var/lib/logstash /etc/kibana /var/lib/kibana
 ```
+<br>
 
 ## Elasticsearch, Kibana, Logstash 설치
 ### 7.17.27버전을 선택 이유 
@@ -72,22 +94,28 @@ $ dpkg -l | grep logstash
 $ sudo systemctl status logstash
 ```
 
+<br>
+
 ## VM 추가 생성
 ### myserver1 복제
 > myserver1(Elasticsearch, Kibana, Logstash설치되어 있는 VM)을 복제<br>
 > 각 서비스를 VM으로 나누어 실행하게되면 자원을 개별적으로 할당하고 관리할 수 있고, 부하를 분산할 수 있음<br>
 
-![image](https://github.com/user-attachments/assets/b7daa9e6-a6ee-4d95-9e83-35d1f61d04ac)![image](https://github.com/user-attachments/assets/ba252a9b-d3d4-49bc-9c66-dfe458b4e210)![image](https://github.com/user-attachments/assets/62801242-8b24-43c3-ada0-b878946e7677)
+| 1 | 2 | 3 |
+|---|---|---|
+| ![Image 1](https://github.com/user-attachments/assets/b7daa9e6-a6ee-4d95-9e83-35d1f61d04ac) | ![Image 2](https://github.com/user-attachments/assets/ba252a9b-d3d4-49bc-9c66-dfe458b4e210) | ![Image 3](https://github.com/user-attachments/assets/62801242-8b24-43c3-ada0-b878946e7677) |
+
 
 ### 복제한 VM에 새로운 IP 할당
 > VM이 실행중이면 종료<br>
 > 설정 \> 네트워크 \> 어댑터 1 \> 어댑터에 브리지로 변경<br>
 > MAC주소 새로고침(MAC주소가 복사되었기때문에 안겹치도록 바꿔줘야함)
 
-![image](https://github.com/user-attachments/assets/dddf9c38-3530-4fc5-98b6-49a3b98bf95a)
+<img src="https://github.com/user-attachments/assets/dddf9c38-3530-4fc5-98b6-49a3b98bf95a" width="500">
 
 ### Ubuntu 로그인하여 할당된 IP 확인(* IP주소는 바뀔 수 있음)
-![image](https://github.com/user-attachments/assets/9fd11c47-c787-4b2e-81da-bc8dc9c961e5)
+<img src="https://github.com/user-attachments/assets/9fd11c47-c787-4b2e-81da-bc8dc9c961e5" width="500">
+
 > Elasticsearch IP : 192.168.0.128<br>
 > Kibana IP : 192.168.0.126<br>
 > Logstash IP : 192.168.0.127.128<br>
@@ -134,8 +162,11 @@ output {
 
 $ sudo systemctl start kibana.service
 ```
+<br>
 
 ## 대용량실데이터 사용 링크
+
+<br>
 
 ## 트러블 슈팅
 ### Elasticsearch 실행 오류
@@ -151,17 +182,19 @@ $ sudo vi /etc/elasticsearch/elasticsearch.yml
 # 단일노드로 사용할수 있도록 구성
 discovery.type: single-node
 ```
-
-![image](https://github.com/user-attachments/assets/910c65aa-36f3-46f5-bcf2-6814aa337551)
+<img src="https://github.com/user-attachments/assets/910c65aa-36f3-46f5-bcf2-6814aa337551" width="700">
 
 ### Wifi사용시 VM 인터넷 연결 오류
 ![image](https://github.com/user-attachments/assets/c043e0ce-c293-433a-be4c-8b32c92a84b7)
 > 설정 \> 네트워크 \> 이름 \> WI-FI랜카드 선택
 
-![image](https://github.com/user-attachments/assets/fde68fcf-d55f-4c00-80ce-0bf963cd0fb8)
-![image](https://github.com/user-attachments/assets/f8fb8837-f78d-47bd-bff0-e0e2cc764556)
+<img src="https://github.com/user-attachments/assets/fde68fcf-d55f-4c00-80ce-0bf963cd0fb8" width="600">
+<img src="https://github.com/user-attachments/assets/f8fb8837-f78d-47bd-bff0-e0e2cc764556" width="600">
 
-## 회고
+
+<br><br>
+
+## 🔄 회고
 ELK 스택을 구성하는 과정에서, 모든 구성 요소를 하나의 VM에 올리는 대신 3개의 VM을 사용하여 서로 통신할 수 있도록 설정하는 것이 어려운 부분이었습니다. <br>
 또한, 버전 간의 호환성 문제로 인해 발생한 트러블슈팅을 통해 해결 방법을 찾는 과정은 매우 흥미로웠습니다. <br>
 3개의 VM을 운영하면서 부하를 분산하는 아키텍처를 구성해보는 경험을 쌓을 수 있었습니다. 
