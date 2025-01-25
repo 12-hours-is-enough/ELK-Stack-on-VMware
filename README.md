@@ -3,10 +3,32 @@
 <br><br>
 
 ## 📑 목차 
-1. [🖥️ 개발 환경](#%EF%B8%8F-개발-환경)
-2. [🏗️ 아키텍쳐](#%EF%B8%8F-아키텍쳐)
-3. [🌐 환경 구성](#-환경-구성)
-4. [🔄 회고](#-회고)
+
+1. [⏲팀 소개](#-team-12시간이-모자라)
+2. [🔍 프로젝트 개요](#-프로젝트-개요)
+3. [🖥️ 개발 환경](#%EF%B8%8F-개발-환경)
+4. [🏗️ 아키텍쳐](#%EF%B8%8F-아키텍쳐)
+5. [🌐 환경 구성](#-환경-구성)
+6. [🔄 회고](#-회고)
+
+<br><br>
+
+## ⏲ TEAM 12시간이 모자라 
+### 팀원 소개
+<div align=center> 
+  
+
+|<img src="https://avatars.githubusercontent.com/u/95984922?v=4" width="150" height="150"/>|<img src="https://avatars.githubusercontent.com/u/165532198?v=4" width="150" height="150"/>|<img src="https://avatars.githubusercontent.com/u/121565744?v=4" width="150" height="150"/>|<img src="https://avatars.githubusercontent.com/u/179544856?v=4" width="150" height="150"/>|
+|:-:|:-:|:-:|:-:|
+|나홍찬<br/>[@nahong_c](https://github.com/HongChan1412)|김소연<br/>[@ssoyeonni](https://github.com/ssoyeonni)|이은정<br/>[@eundeom](https://github.com/eundeom)|이은준<br/>[@2EunJun](https://github.com/2EunJun)|
+
+</div>
+
+<br><br>
+
+## 🔍 프로젝트 개요
+### ◽ 목표
+이 프로젝트의 목표는 각각의 가상 머신(VM)에 Elasticsearch, Logstash, Kibana를 구성하여 ELK Stack 시스템을 구축하는 것입니다. VM 간의 통신을 원활하게 하기 위해 VirtualBox의 어댑터 브릿지를 사용합니다.
 
 <br><br>
 
@@ -164,7 +186,7 @@ $ sudo systemctl start kibana.service
 ```
 <br>
 
-## 대용량실데이터 사용 링크
+## [🧶 대용량실데이터 사용 링크](https://github.com/12-hours-is-enough/TomorrowTheInsuranceKing)
 
 <br>
 
