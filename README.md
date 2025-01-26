@@ -9,7 +9,9 @@
 3. [🖥️ 개발 환경](#%EF%B8%8F-개발-환경)
 4. [🏗️ 아키텍쳐](#%EF%B8%8F-아키텍쳐)
 5. [🌐 환경 구성](#-환경-구성)
-6. [🔄 회고](#-회고)
+6. [✨ 설치 자동화](#-설치-자동화)
+7. [🚨 트러블 슈팅](#-트러블-슈팅)
+8. [🔄 회고](#-회고)
 
 <br><br>
 
@@ -66,7 +68,8 @@ $ sudo rm -rf /etc/elasticsearch /var/lib/elasticsearch /etc/logstash /var/lib/l
 
 ## Elasticsearch, Kibana, Logstash 설치
 ### 7.17.27버전을 선택 이유 
-> 7.X버전중 가장 최신 릴리스 버전 선택
+> 7.X버전중 가장 최신 릴리스 버전 선택<br>
+> https://www.elastic.co/blog/elastic-stack-7-17-27-released
 
 ### Elasticsearch 7.x 패키지 저장소 추가
 ```
@@ -186,12 +189,64 @@ $ sudo systemctl start kibana.service
 ```
 <br>
 
+## ✨ 설치 자동화
+### 목표
+> 스크립트 명령어를 모아 파일로 만들어 간단하게 설치할 수 있도록 함
+
+### 설치 방법
+
+```
+# shell script 파일 설치
+
+$ git clone https://github.com/12-hours-is-enough/ELK-Stack-on-VMware.git
+$ cd setup_files/
+```
+<br>
+
+> **[remove_elk.sh](https://github.com/12-hours-is-enough/ELK-Stack-on-VMware/blob/main/setup_files/remove_elk.sh)**
+```
+# 기존ELK 삭제
+
+$ chmod +x remove_elk.sh
+$ sudo ./remove_elk.sh
+```
+<br>
+
+> **[install_elk.sh](https://github.com/12-hours-is-enough/ELK-Stack-on-VMware/blob/main/setup_files/intsall_elk.sh)**
+```
+# ELK 7.17.27 설치
+
+$ chmod +x install_elk.sh
+$ sudo ./install_elk.sh
+```
+<br>
+
+> **[set_elasticsearch.sh](https://github.com/12-hours-is-enough/ELK-Stack-on-VMware/blob/main/setup_files/set_elasticsearch.sh)**
+```
+# elasticsearch .yml 수정
+
+$ chmod+x set_elasticsearch.sh
+$ sudo ./set_elasicsearch.sh
+```
+<br>
+
+> **[set_kibana.sh](https://github.com/12-hours-is-enough/ELK-Stack-on-VMware/blob/main/setup_files/set_kibana.sh)**
+```
+# kibana.yml 수정
+
+$ chmod+x set_kibana.sh
+$ sudo ./set_kibana.sh
+```
+<br>
+
 ## [🧶 대용량실데이터 사용 링크](https://github.com/12-hours-is-enough/TomorrowTheInsuranceKing)
 
 <br>
 
-## 트러블 슈팅
+## 🚨 트러블 슈팅
 ### Elasticsearch 실행 오류
+<img src="https://github.com/user-attachments/assets/910c65aa-36f3-46f5-bcf2-6814aa337551" width="700">
+
 ```
 Job for elasticsearch.service failed because the control process exited with error code.
 See "systemctl status elasticsearch.service" and "journalctl -xeu elasticsearch.service" for details.
@@ -204,7 +259,6 @@ $ sudo vi /etc/elasticsearch/elasticsearch.yml
 # 단일노드로 사용할수 있도록 구성
 discovery.type: single-node
 ```
-<img src="https://github.com/user-attachments/assets/910c65aa-36f3-46f5-bcf2-6814aa337551" width="700">
 
 ### Wifi사용시 VM 인터넷 연결 오류
 ![image](https://github.com/user-attachments/assets/c043e0ce-c293-433a-be4c-8b32c92a84b7)
@@ -220,4 +274,4 @@ discovery.type: single-node
 ELK 스택을 구성하는 과정에서, 모든 구성 요소를 하나의 VM에 올리는 대신 3개의 VM을 사용하여 서로 통신할 수 있도록 설정하는 것이 어려운 부분이었습니다. <br>
 또한, 버전 간의 호환성 문제로 인해 발생한 트러블슈팅을 통해 해결 방법을 찾는 과정은 매우 흥미로웠습니다. <br>
 3개의 VM을 운영하면서 부하를 분산하는 아키텍처를 구성해보는 경험을 쌓을 수 있었습니다. <br>
-팀원들과 어떤 버전을 설치할지 고민하고, 설치 과정에서 발생한 문제를 함께 해결해보며 많은 것을 배운 좋은 경험이었다.
+팀원들과 어떤 버전을 설치할지 고민하고, 설치 과정에서 발생한 문제를 함께 해결해보며 많은 것을 배운 좋은 경험이었습니다
