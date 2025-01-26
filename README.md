@@ -35,7 +35,7 @@
 <br><br>
 
 ## 🖥️ 개발 환경 
-> 운영체제 : Ubuntu:24.04.4<br>
+> 운영체제 : Ubuntu:24.04.1<br>
 > ELK-Stack : 7.17.27<br>
 > JDK : 17.0.13<br>
 > SSH Connection Tool : mobaxterm
