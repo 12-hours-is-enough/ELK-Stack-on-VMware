@@ -199,7 +199,7 @@ $ sudo systemctl start kibana.service
 # shell script 파일 설치
 
 $ git clone https://github.com/12-hours-is-enough/ELK-Stack-on-VMware.git
-$ cd setup_files/
+$ cd ELK-Stack-on-VMware/setup_files/
 ```
 <br>
 
@@ -212,7 +212,7 @@ $ sudo ./remove_elk.sh
 ```
 <br>
 
-> **[install_elk.sh](https://github.com/12-hours-is-enough/ELK-Stack-on-VMware/blob/main/setup_files/intsall_elk.sh)**
+> **[install_elk.sh](https://github.com/12-hours-is-enough/ELK-Stack-on-VMware/blob/main/setup_files/instsall_elk.sh)**
 ```
 # ELK 7.17.27 설치
 
@@ -225,7 +225,7 @@ $ sudo ./install_elk.sh
 ```
 # elasticsearch .yml 수정
 
-$ chmod+x set_elasticsearch.sh
+$ chmod +x set_elasticsearch.sh
 $ sudo ./set_elasicsearch.sh
 ```
 <br>
