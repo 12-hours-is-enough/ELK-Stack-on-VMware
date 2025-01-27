@@ -212,7 +212,7 @@ $ sudo ./remove_elk.sh
 ```
 <br>
 
-> **[install_elk.sh](https://github.com/12-hours-is-enough/ELK-Stack-on-VMware/blob/main/setup_files/instsall_elk.sh)**
+> **[install_elk.sh](https://github.com/12-hours-is-enough/ELK-Stack-on-VMware/blob/main/setup_files/install_elk.sh)**
 ```
 # ELK 7.17.27 설치
 
