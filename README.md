@@ -70,6 +70,7 @@ $ sudo rm -rf /etc/elasticsearch /var/lib/elasticsearch /etc/logstash /var/lib/l
 ### 7.17.27버전을 선택 이유 
 > 7.X버전중 가장 최신 릴리스 버전 선택<br>
 > https://www.elastic.co/blog/elastic-stack-7-17-27-released
+<br>
 
 ### Elasticsearch 7.x 패키지 저장소 추가
 ```
@@ -265,6 +266,9 @@ discovery.type: single-node
 > 설정 \> 네트워크 \> 이름 \> WI-FI랜카드 선택
 
 <img src="https://github.com/user-attachments/assets/fde68fcf-d55f-4c00-80ce-0bf963cd0fb8" width="600">
+<br><br>
+
+> ip 주소 받아오는 것 확인
 <img src="https://github.com/user-attachments/assets/f8fb8837-f78d-47bd-bff0-e0e2cc764556" width="600">
 
 
@@ -274,4 +278,5 @@ discovery.type: single-node
 ELK 스택을 구성하는 과정에서, 모든 구성 요소를 하나의 VM에 올리는 대신 3개의 VM을 사용하여 서로 통신할 수 있도록 설정하는 것이 어려운 부분이었습니다. <br>
 또한, 버전 간의 호환성 문제로 인해 발생한 트러블슈팅을 통해 해결 방법을 찾는 과정은 매우 흥미로웠습니다. <br>
 3개의 VM을 운영하면서 부하를 분산하는 아키텍처를 구성해보는 경험을 쌓을 수 있었습니다. <br>
-팀원들과 어떤 버전을 설치할지 고민하고, 설치 과정에서 발생한 문제를 함께 해결해보며 많은 것을 배운 좋은 경험이었습니다
+팀원들과 어떤 버전을 설치할지 고민하고, 설치 과정에서 발생한 문제를 함께 해결해보며 많은 것을 배운 좋은 경험이었습니다.<br>
+
