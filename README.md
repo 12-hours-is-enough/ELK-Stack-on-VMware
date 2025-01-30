@@ -235,8 +235,17 @@ $ sudo ./set_elasicsearch.sh
 ```
 # kibana.yml 수정
 
-$ chmod+x set_kibana.sh
+$ chmod +x set_kibana.sh
 $ sudo ./set_kibana.sh
+```
+<br>
+
+> **[set_logstash.sh](https://github.com/12-hours-is-enough/ELK-Stack-on-VMware/blob/main/setup_files/set_logstash.sh)**
+```
+# logstash.conf 생성
+
+$ chmod +x set_logstash.sh
+$ sudo ./set_logstash.sh
 ```
 <br>
 
