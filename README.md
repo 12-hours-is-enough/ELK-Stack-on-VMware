@@ -197,7 +197,7 @@ $ sudo systemctl start kibana.service
 ### 설치 방법
 
 ```
-# shell script 파일 설치
+# shell script 파일 다운로드
 
 $ git clone https://github.com/12-hours-is-enough/ELK-Stack-on-VMware.git
 $ cd ELK-Stack-on-VMware/setup_files/
